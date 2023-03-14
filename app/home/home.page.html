@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title style="text-align: center; font-weight: bold; font-size: x-large;">
+      RFID SMART LOCK
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color:rgb(23, 32, 156);" menu="menuList"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true"> 
+  
+  <div class="pir-card">
+    <h2 style="margin-left: 30px; margin-top: 30px; font-size: large; font-weight: bold;">
+      DASHBOARD MONITORING
+    </h2>
+    <ion-card style="margin-top: 30px; text-align: center;" color="dark">
+      <ion-card-header>
+        <ion-card-subtitle style="font-weight: bolder; font-size: medium; color: rgb(23, 32, 156);"> 
+          MOTION
+        </ion-card-subtitle>
+        <ion-card-title style="font-size: medium; font-weight: bold;"> 
+          {{this.MotionStatus}}  
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
+  <br>
+
+  <div class="servo-card">
+    <ion-card style="margin-top: 10px; text-align: center;" color="dark">
+      <ion-card-header>
+        <ion-card-subtitle style="font-weight: bolder; font-size: medium; color: rgb(23, 32, 156);"> 
+          RFID TAG ID
+        </ion-card-subtitle>
+        <ion-card-title style="font-size: medium; font-weight: bold;"> 
+          {{this.RFIDStatus}} 
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
+  <br>
+
+  <div class="servo-card">
+    <ion-card style="margin-top: 10px; text-align: center;" color="dark">
+      <ion-card-header>
+        <ion-card-subtitle style="font-weight: bolder; font-size: medium; color: rgb(23, 32, 156);"> 
+          CONDITION DOOR
+        </ion-card-subtitle>
+        <ion-card-title style="font-size: medium; font-weight: bold;"> 
+          {{this.ServoStatus}} 
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
+  <br>
+
+  <div class="servo-toggle">
+    <p style="margin-top: 10px; margin-left: 25px; font-size: medium; ">
+      Click this button if you want to open or close <br> the door
+    </p>
+    <ion-toggle style="margin-left: 120px;" slot="end" 
+      [(ngModel)] = "this.isServoToggled"
+      (ionChange) = "this.toggleServo(this.isServoToggled)">
+    </ion-toggle>
+    <ion-label slot="end">
+      {{this.currentServoStatus}}
+    </ion-label>
+  </div> 
+  
+</ion-content>

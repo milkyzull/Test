@@ -1,0 +1,38 @@
+<ion-content>
+  <div class="login-section ion-padding">
+    
+    <div class="heading ion-padding">
+      <h1>WELCOME TO RFID SMART LOCK</h1>
+      <p>Sign to continue</p>
+    </div>
+    
+    <div [formGroup]="loginForm" class="login-form ion-padding">
+
+      <div class="form-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">EMAIL</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+      </div>
+       
+      <div class="form-input">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">PASSWORD</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="action-buttons ion-padding">
+        <ion-button size="large" class="login-button" (click)="login()">Log In</ion-button>
+        <p>New User ? Please</p>
+        <ion-button class="signup-button" size="large" fill="outline" routerLink="/register">Sign up</ion-button>
+      </div>
+
+    </div>
+
+  </div>
+</ion-content>
+
+
